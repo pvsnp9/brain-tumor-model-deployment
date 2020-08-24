@@ -82,7 +82,7 @@ pycparser==2.20
 pyct==0.4.6
 pydicom==2.0.0
 Pygments==2.6.1
-pygpu==0.1.0
+# pygpu==0.1.0
 pylint==2.6.0
 pyOpenSSL==19.1.0
 pyparsing==2.4.7
