@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Automatic Brain Tumor Segmentation</title>
+        <meta name="description" content="Deep Learning powered Automatic Brain Tumore Segmentation. This application uses 3D U-net architecture for Automatic Segmentation">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;1,100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=Raleway+Dots&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static '/css/base.css' %}">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+       
+        <div class="container-fluid">
+        {% include 'mri_core/navbar.html' %}
+        {% block content %}
+
+
+        {% endblock %}
+        </div>
+        <hr/>
+
+        <footer id="sticky-footer" class="py-4 text-white-50">
+            <div class="container text-center">
+              <small>Copyright &copy; Open Source</small><br>
+              <small>This is academic project for CS 842 Data Science at University of Regina</small> <br>
+              <small>Developer: Saroj Basnet skb976(at)uregina(dot)ca</small>
+            </div>
+          </footer>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <script>
+            $(document).ready(function() {
+                $('#submit-check').on('change',function(e){
+                    e.preventDefault();
+                    file_name = $('#submit-check').val()
+                    $('#label_update').html(file_name);
+
+                    // file type check
+                    exploded_string = file_name.split('.');
+                    file_ext = exploded_string.slice(-2)[0] + '.' + exploded_string.slice(-1)[0]
+                    if(file_ext === 'nii.gz'){
+                        $('#p_v').removeClass('disabled');
+                        $('#p_v').data('show', true);
+                    }else{
+                        $('#p_v').addClass('disabled');
+                        $('#p_v').data('show', false);
+                        $('.file_error_message').html('Please provide specified file type and dimension. Try Again ')
+                    }
+                });
+
+                $('#p_v').click(function(e){
+                    e.preventDefault();
+
+
+                    
+                    if($('#p_v').data('show')){ 
+                        $("#prediction_modal").modal('show');
+                    }else{
+                        $("#prediction_modal").modal('hide');
+                    }
+                    
+                });
+
+                $('.sample_show').click(function(e){
+                    e.preventDefault();
+                    baseURL = "{% static 'images/' %}"
+                    $('#sample_pred').attr('src', baseURL + 'loader.gif');
+                    $('#sample_score').attr('src', baseURL + 'loader.gif');
+                    image_key = $(this).data('image');
+                    
+                    $('#prediction_modal_from_sample').modal('show');
+                    randTIme = Math.floor(Math.random() * 5000) + 1000;
+                    // as we predicted image from our model
+                    // our code is there to predic, but due to required hardware resources 
+                    // i have simulated following and will be improved as we have beter env and resources
+                    pre_file_name = "pred_"+image_key+".JPG";
+                    score_file_name = "score_"+image_key+".JPG";
+                    setTimeout( function() {
+                        $('#sample_pred').attr('src', baseURL + 'predicted/'+pre_file_name);
+                        $('#sample_score').attr('src', baseURL + 'predicted/'+score_file_name);
+                        console.log("Show Images ", randTIme)
+                    }, randTIme);
+
+                });
+                
+            });
+        </script>
+    </body>
+</html>

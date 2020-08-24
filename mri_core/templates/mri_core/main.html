@@ -1,0 +1,63 @@
+{% extends 'mri_core/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="card border-success mb-3" >
+        <div class="card-header bg-transparent border-success anatomy">Anatomy</div>
+        <!-- <div class="card-body text-success col-md-6">
+          
+          <p class="card-text">
+              <img  src="{% static 'images/anatomy.gif' %}" alt="Brain Anatomy">
+          </p>
+          <p class="card-text">
+            djfiadsjgadjsgijadgiajisgja
+        </p>
+        </div> -->
+
+        
+            <div class="row">
+              <div class="col-md-6">
+                <img class="anatomy-img" src="{% static 'images/anatomy.gif' %}" alt="Brain Anatomy">
+              </div>
+              <div class="col-md-6 viz">
+                <span class="border-warning  border-bottom">I/O and How to Visualize Brain MRI images</span> <br/>  
+                <!-- <span class="badge badge-pill badge-secondary input-img">Input</span> -->
+
+                <div class="card-group input-img">
+                    <div class="card">
+                        <img class="card-img-top" src="{% static 'images/coronal_sample.PNG' %}" alt="Coronal Plane">
+                      <div class="card-body">
+                        <h7 class="card-title">Coronal Plane</h7>
+                        <p class="card-text"><small class="text-muted">(Frontal Plane)It is X-Z Plane, perpendicular to the ground, which (in humans) separates the anterior from posterior, the front from back, the ventral from the dorsal.</small></p>
+                      </div>
+                      
+                    </div>
+                    <div class="card">
+                     <img class="card-img-top" src="{% static 'images/sagital_sample.png' %}" alt="Sagital Plane">
+                      <div class="card-body">
+                        <h7 class="card-title">Sagital Plane</h7>
+                        <p class="card-text"><small class="text-muted">(Median Plane) It is Y-Z plane, perpendicular to the ground, which separates left from right. The mid-sagital plane is the specific sagital plane that is exactly in the middle of body.</small></p>
+                      </div>
+                     
+                    </div>
+                    <div class="card">
+                     <img class="card-img-top" src="{% static 'images/traversal_sample.png' %}" alt="Traversal Plane">
+                      <div class="card-body">
+                        <h5 class="card-title">Traversal Plane</h5>
+                        <p class="card-text"><small class="text-muted">(Horizontal Plane) It is a X-Y-Z plane, parallel to the ground, which(in humans) separates the superior from the inferior, put head from the feet.</small></p>
+
+                      </div>
+                    </div>
+                  </div>
+
+               
+
+              </div>
+              
+            </div>
+          
+        
+       
+      </div>
+
+{% endblock %}

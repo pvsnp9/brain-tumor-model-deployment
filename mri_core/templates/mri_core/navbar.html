@@ -1,0 +1,17 @@
+{% load static %}
+<nav class="navbar sticky-top navbar-light bg-light custom">
+    <a class="navbar-brand" href="{% url 'home' %}">
+        <img class="logo" src="{% static 'images/logo.png' %}" alt="Jhalita">
+        Jhalita
+    </a>
+    <div>
+        <a class="navbar-brand" href="{% url 'operation' %}">
+            Operations
+        </a>
+    
+        <a class="navbar-brand" href="{% url 'about' %}">
+            About
+        </a>
+    </div>
+
+  </nav>
