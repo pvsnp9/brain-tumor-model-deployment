@@ -1,1 +1,1 @@
-web: gunicorn brain-tumour-segmentation.wsgi
+web: gunicorn mri_segmentation.wsgi
