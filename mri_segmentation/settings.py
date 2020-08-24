@@ -25,7 +25,7 @@ SECRET_KEY = 'nwi^9$k#r*!k$7nqxqb2dp03b!pt32^t+54wmewzhibfh2ti_&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['brain-tumour-segmentation.herokuapp.com/']
 
 
 # Application definition
