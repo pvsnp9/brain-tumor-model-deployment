@@ -15,7 +15,7 @@ cryptography==3.0
 cycler==0.10.0
 decorator==4.4.2
 defusedxml==0.6.0
-Django==2.0.5
+Django==3.0
 entrypoints==0.3
 gast==0.2.2
 google-pasta==0.2.0
@@ -83,7 +83,7 @@ pyct==0.4.6
 pydicom==2.0.0
 Pygments==2.6.1
 # pygpu==0.1.0
-pylint==2.6.0
+# pylint==2.6.0
 pyOpenSSL==19.1.0
 pyparsing==2.4.7
 pyrsistent==0.16.0
@@ -115,6 +115,6 @@ wcwidth==0.1.9
 webencodings==0.5.1
 Werkzeug==1.0.1
 widgetsnbextension==3.5.1
-wrapt==1.12.1
+wrapt==1.11
 zipp==3.1.0
 zstandard==0.14.0
