@@ -82,8 +82,8 @@ pycparser==2.20
 pyct==0.4.6
 pydicom==2.0.0
 Pygments==2.6.1
-pygpu==0.7.6
-pylint==2.4.4
+pygpu==0.1.0
+pylint==2.6.0
 pyOpenSSL==19.1.0
 pyparsing==2.4.7
 pyrsistent==0.16.0
@@ -91,7 +91,7 @@ PySocks==1.7.1
 python-dateutil==2.8.1
 pytz==2020.1
 PyYAML==5.3.1
-pyzmq==18.1.1
+pyzmq==19.0.2
 requests==2.24.0
 scipy==1.4.1
 seaborn==0.10.1
