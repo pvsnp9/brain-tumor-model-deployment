@@ -1,0 +1,1 @@
+web: gunicorn brain-tumour-segmentation.wsgi:application --log-file
