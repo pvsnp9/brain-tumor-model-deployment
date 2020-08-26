@@ -4,9 +4,8 @@ In this project, Brain MRIs are segmented using Deep learning model using 3D U-n
 
 
 ## Live Demo on Heroku 
-```
-[Brain Tumor Segmentation] (https://brain-tumour-segmentation.herokuapp.com/)
-```
+
+[Brain Tumor Segmentation](https://brain-tumour-segmentation.herokuapp.com/)
 
 
 ## Installation and environemnt setup 
