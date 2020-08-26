@@ -3,6 +3,12 @@
 In this project, Brain MRIs are segmented using Deep learning model using 3D U-net Model. This web application project built using django and deep learning model called 3D-Unet.
 
 
+## Live Demo on Heroku 
+```
+[Brain Tumor Segmentation] (https://brain-tumour-segmentation.herokuapp.com/)
+```
+
+
 ## Installation and environemnt setup 
 
 * Clone this repository 
